@@ -19,7 +19,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{lmcs}
+\ProvidesClass{jpc}
               [2009/05/25 v0.9 LMCS Layout Editor Class]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{amsart}}
 \ProcessOptions\relax
@@ -218,9 +218,9 @@
 \def\@oddhead{%
 \hbox{%
   \vbox to 30 pt{\scriptsize\vfill
-    \hbox{\textsf{Logical Methods in Computer Science}\hfil}
+    \hbox{\textsf{Journal of Privacy and Confidentiality}\hfil}
     \hbox{\textsf{Vol.~? (?:?) 2???, ? pages}}
-    \hbox{\textsf{www.lmcs-online.org}}
+    \hbox{\textsf{journalprivacyconfidentiality.pub}}
     \rlap{\vrule width\hsize depth .4 pt}}}\hfill
 \raise 4pt
 \hbox{%
@@ -243,9 +243,9 @@
 \hbox{%
   \vbox{\fontsize{6}{8 pt}\baselineskip=6 pt\vss
     \hbox{\hbox to 20 pt{\hfill}
-          \textsf{LOGICAL METHODS}\hfil}
+          \textsf{JOURNAL OF PRIVACY}\hfil}
     \hbox{\hbox to 20 pt{\phantom{x}}
-          \textsf{IN COMPUTER SCIENCE}}}}
+          \textsf{AND CONFIDENTIALITY}}}}
 \hfill\textsf{DOI:10.2168/LMCS-???}
 %\hfill\textsf{\copyright\shortauthors}
 \hfill
