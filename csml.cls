@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Modification log
 %%
 %% 2004/03/25 v0.1 based on amsart.cls, inspired by jair.sty 
@@ -12,35 +12,203 @@
 %% 2011/04/23 v0.81 based on amsart.cls
 %% 2013/02/05 v0.82 based on amsart.cls
 %% 2013/09/20 v0.9 based on amsart.cls
-%% 2015/03/27 v0.91 based on amsart.cls
-%% 2018/06/19 v0.91jpc based on lmcs.cls
 %%                
-%%                 Juergen Koslowski (Stefan Milius)
+%%                 Juergen Koslowski, Stefan Milius
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{jpc}
-              [2018/06/19 v0.91jpc LMCS Layout Editor Class]
+\ProvidesClass{CSML}
+              [2013/09/20 v0.9 LMCS Layout Editor Class]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{amsart}}
 \ProcessOptions\relax
 
 \LoadClass[11pt,reqno]{amsart}
-\usepackage{helvet}
-
+\usepackage{helvet,cclicenses}
 \usepackage{enumitem}
-\setlist[enumerate]{font=\normalfont,labelindent=*,leftmargin=*}
+\setlist[enumerate]{font=\normalfont,labelindent=*,leftmargin=*,start=1}
 \setlist[itemize]{labelindent=*,leftmargin=*}
 \setlist[description]{labelindent=*,leftmargin=*,itemindent=-1 em}
 \usepackage{microtype}
+\usepackage{tikz}
+\usepackage{color}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   		Use of this class, cf. also lmcs-smp.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This class builds upon the amsart class of AMS-LaTeX and requires use
+% of LaTeX 2e. 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		Start of the paper
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% \documentclass{lmcs} 
+%
+% without any options followed optionally by
+%
+% \usepackage{package1,package2,...}
+%
+% loading additional macro packages you may wish to use, (eg, xypic, etc.)
+% (This also is the place to define further theorem-environments, in case
+% those provided by default do not suffice, cf. below.)
+%
+% \begin{document}
+% \title[short_title]{real title}
+%
+% and a list of author information of the form
+%
+% \author[short_author1]{Author 1}
+% \address{address 1}
+% \email{author1@email1}
+% \thanks{thanks 1}
+%
+% \author[short_author2]{Author 2}
+% \address{address 2}
+% \email{author2@email2}
+% \thanks{thanks 2}
+%
+% \author[short_author3]{Author 3}
+% \address{address 3}
+% \email{author3@email3}
+% \thanks{thanks 3}
+%
+% The \author, \address and \email fields are mandatory.
+%
+% The \thanks fields are optional.  They appear
+% in footnotes on the title page, the addresses and email information
+% is relegated to the top of the article.  The optional arguments to
+% the \title and \author macros determine a running head on the odd
+% and even pages, respectively.
+%
+% Lists of keywords and phrases as well as an ACM Subject
+% classification are mandatory; these appear in footnotes on the
+% title page, preceeding any \thanks fields.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		Body of the paper
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% We encourage the use of LaTeX's crossreferencing capabilities with the
+% \label and \ref commands, for sections, subsections, theorems etc., and
+% displayed equations and figures.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		Theorems, Definitions etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% The following theorem-like environments are available.  The
+% numbering is consecutive within sections.
+%
+% thm   Theorem
+% cor   Corollary
+% lem   Lemma
+% prop  Proposition
+% asm   Asumption
+%
+% defi  Definition
+% rem   Remark
+% rems  Remarks (intended for use with itemized remarks)
+% exa   Example
+% exas  Examples (intended for use with itemized examples)
+% conj  Conjecture
+% prob  Problem
+% oprob Open Problem
+% algo  Algorithm
+% obs   Observation
+%
+% If you require additional environments, you can add them before
+% \begin{document} by means of
+%
+% \theoremstyle{plain}\newtheorem{env}[thm]{Environment}
+%
+% or
+%
+% \theoremstyle{definition}\newtheorem{env}[thm]{Environment}
+%
+% In the first case the font within the new environment will be italicised.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		Proofs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Proofs start with the command \proof and should be ended by \qed,
+% which provides an end-of-proof box at the right margin:
+%
+% \proof ... \qed
+%
+% In itemized or enumerated proofs the \qed command has to occur BEFORE 
+% \end{itemize} or \end{enumerate} to ensure proper placement of the box:
+%
+% \proof
+% \begin{itemize}
+% \item[(1)] ...
+% \item[(2)] ...
+% ...
+% \item[(n)] ... \qed
+% \end{itemize}
+%
+% Similarly, the box may be used within theorem environments, when no
+% explicit proof is given:
+%
+% \begin{thm} ... \qed \end{thm}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		Itemized or enumerated environments and proofs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% By default, the first item of an itemized (or enumerated) environment
+% or proof appears inlined on the same line as the environment title.
+% This can be prevented by placing \hfill before the itemization, e.g.:
+%
+% \begin{thm}\label{T:abc}\hfill
+% \begin{itemize} ...
+%
+% \proof\hfill
+% \begin{itemize} ...
+
+
+%
+%		End of the paper
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Acknowledgements should be placed in a non-numbered section:
+%
+% \section*{Acknowledgement}
+%
+% The bibliography uses alpha.bst where references are built from the 
+% authors' initials and the year of publication.  The use of bibtex
+% for creating the bibliography is strongly encouraged.  Then the
+% end of the paper takes the form
+%
+% \begin{thebibliography}{key}
+% \end{thebibliography}
+% \end{document}
+%
+% where ``key'' is the longest alphanumerical key expected to occur.
+%
+% Optionally, appendices can be inserted after the bibliography by
+% means of
+%
+% \end{thebibliography}
+% \appendix
+% \section{} % Appendix A
+% \section{} % Appendix B
+% % etc.
+% \end{document}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                   actual macros
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% FIXME: does this cause problems?
 \count255=\the\catcode`\@ \catcode`\@=11 \edef\catc@de{\the\count255}
 
-\newif\ifsuPer \suPertrue
+\newenvironment{iteMize}[1]{\begin{enumerate}[#1]}{\end{enumerate}}
+\newenvironment{desCription}{\begin{enumerate}[\hbox to8 pt{\hfill}]}{\end{enumerate}}
+\newenvironment{desCriPtion}{\begin{enumerate}[\hbox to14 pt{\hfill}]}{\end{enumerate}}\newif\ifsuPer \suPertrue
 \def\rsuper#1{\ifsuPer${\,}^{\MakeLowercase #1}$\fi}%
 \def\lsuper#1{\ \hskip-2 pt\ifsuPer\hbox to0 pt{\hss${}^{\MakeLowercase #1}\ $\fi}}%
 
@@ -90,8 +258,8 @@
 \newbox\revisionbox
 \newenvironment{revision}{%
   \ifx\maketitle\relax
-    \ClassWarning{\@classname}{Revision should precede
-      \protect\maketitle\space in JPC documentclasses; reported}%
+    \ClassWarning{\@classname}{Revision should precede 
+      \protect\maketitle\space in LMCS documentclasses; reported}%
   \fi
   \global\setbox\revisionbox=\vtop \bgroup
     \normalfont\Small
@@ -205,6 +373,7 @@
 \setlength{\textheight}{8.5 true in}  % Height of text (including footnotes & figures)
 \setlength{\textwidth}{6.0 true in}   % Width of text line.
 \setlength{\parindent}{20 pt}   % Width of text line.
+% FIXME: do these cause problems?
 \widowpenalty=10000
 \clubpenalty=10000
 \@twosidetrue \@mparswitchtrue \def\ds@draft{\overfullrule 5pt}
@@ -213,50 +382,77 @@
 %% Pagestyle
 
 %% Defines the pagestyle for the title page.
-%% Usage: \jpcheading{vol}{issue}{year}{pages}{subm}{publ}{rev}{spec_iss}{title}
+%% Usage: \lmcsheading{vol}{issue}{year}{pages}{subm}{publ}{rev}{spec_iss}{title}
 
-\def\jpcheading#1#2#3#4#5#6#7{\def\ps@firstpage{\let\@mkboth\@gobbletwo%
+\def\lmcsurl{https://lmcs.episciences.org/}
+
+\def\lmcsheading#1#2#3#4#5#6#7{\def\ps@firstpage{\let\@mkboth\@gobbletwo%
 \def\@oddhead{%
-\hbox{%
+\hbox{\fontencoding{T1}%
   \vbox to 30 pt{\scriptsize\vfill
-    \hbox{\textsf{Journal of Privacy and Confidentiality}\hfil}
-    \hbox{\textsf{Vol.~? (?:?) 2???, ? pages}}
-    \hbox{\textsf{journalprivacyconfidentiality.pub}}
+    \hbox{\textsf{Logical Methods in Computer Science}\hfil}
+%    \hbox{\textsf{Vol.~\doi, pp.\ 1--#2}}
+    \hbox{\textsf{Vol.~\dOi, pp.\ #2}}
+    \hbox{\textsf{\href{\lmcsurl}{\lmcsurl}}}
     \rlap{\vrule width\hsize depth .4 pt}}}\hfill
 \raise 4pt
-\hbox{%
+\hbox{\fontencoding{T1}%
   \vbox to 30 pt{\scriptsize\vfill
-    \hbox{\textsf{}}
-    \hbox{\textsf{}}}}\hfill
+    \hbox{\textsf{#3}}
+    \hbox{\textsf{#4}}}}\hfill
 \raise 4pt
-\hbox{%
+\hbox{\fontencoding{T1}%
   \vbox to 30 pt{\scriptsize\vfill
-    \hbox to 94 pt{\textsf{Submitted\hfill date}}
-    \hbox to 94 pt{\textsf{Published\hfill date}}
-    }}}
+    \hbox to 94 pt{\textsf{Submitted\hfill #5}}
+    \hbox to 94 pt{\textsf{Published\hfill #6}}
+    #7}}}
 \def\@evenhead{}\def\@evenfoot{}}%
 \thispagestyle{firstpage}}
+
+%% Creative Commons fonts %%
+
+\DeclareRobustCommand{\crC}{%
+  \ifmmode{\nfss@text{\text@cc}}\else\text@cc\fi}
+\DeclareRobustCommand{\crCnd}{%
+  \ifmmode{\nfss@text{\text@ccnd}}\else\text@ccnd\fi}
+\DeclareRobustCommand{\crCby}{%
+  \ifmmode{\nfss@text{\text@ccby}}\else\text@ccby\fi}
+\DeclareRobustCommand{\crCnc}{%
+  \ifmmode{\nfss@text{\text@ccnc}}\else\text@ccnc\fi}
+\DeclareRobustCommand{\crCsa}{%
+  \ifmmode{\nfss@text{\text@ccsa}}\else\text@ccsa\fi}
+\renewcommand{\by}{\crCby}
+\renewcommand{\bynd}{\crCby\crCnd}
+\renewcommand{\byncnd}{\crCby\crCnc\crCnd}
+\renewcommand{\bync}{\crCby\crCnc}
+\renewcommand{\byncsa}{\crCby\crCnc\crCsa}
+\renewcommand{\bysa}{\crCby\crCsa}
+\renewcommand{\nd}{\crCnd}
+\renewcommand{\ndnc}{\crCnd\crCnc}
+\renewcommand{\nc}{\crCnc}
+\renewcommand{\ncsa}{\crCnc\crCsa}
+\renewcommand{\sa}{\crCsa}
+%%%%%%%%%%%%
 
 \def\endfront@text{%
     \insert\copyins{\hsize\textwidth
       \fontsize{6}{7\p@}\normalfont\upshape
       \noindent
-\hbox{%
+\hbox{\fontencoding{T1}%
   \vbox{\fontsize{6}{8 pt}\baselineskip=6 pt\vss
     \hbox{\hbox to 20 pt{\hfill}
-          \textsf{JOURNAL OF PRIVACY}\hfil}
-    \hbox{\hbox to 20 pt{\phantom{x}}
-          \textsf{AND CONFIDENTIALITY}}}}
-\hfill\textsf{DOI:10.29012/jpc.???}
+          \textsf{LOGICAL METHODS}\hfil}
+    \hbox{\hbox to 20 pt{\font\logo=LMCS-logo\smash{\logo l}}
+          \textsf{IN COMPUTER SCIENCE}}}}
+\hfill\textsf{DOI:10.23638/LMCS-\dOi}
 %\hfill\textsf{\copyright\shortauthors}
 \hfill
-\hbox{%
+\hbox{\fontencoding{T1}%
   \vbox{\fontsize{6}{8 pt}\baselineskip=6 pt\vss
-    \hbox{\textsf{\,\,\copyright\quad \shortauthors}\hfil}
-    \hbox{\textsf{\,\,Creative Commons (CC BY 4.0)}\hfil}}}
+    \hbox{\textsf{\hspace{2 pt}\copyright\quad \shortauthors}\hfil}
+    \hbox{\textsf{\crC\ \href{http://creativecommons.org/about/licenses}{Creative Commons}}\hfil}}}
 \par\kern\z@}%
 }
-%\def\endfront@text{}
 
 \def\enddoc@text{\nobreak%
     \insert\copyins{\hsize.57\textwidth
@@ -264,8 +460,9 @@
       \fontsize{6}{7\p@}\normalfont\upshape
       \everypar{}%
       \noindent\fontencoding{T1}%
-  \textsf{This work is licensed under the  Creative Commons License – Attribution 4.0 International (CC BY 4.0). To view a copy of this license, visit
-  \texttt{https://creativecommons.org/licenses/by/4.0/} or send a
+  \textsf{This work is licensed under the Creative Commons
+  Attribution-NoDerivs License. To view a copy of this license, visit
+  \texttt{https://creativecommons.org/licenses/by-nd/4.0/} or send a
   letter to Creative Commons, 171 Second St, Suite 300, San Francisco,
     CA 94105, USA, or Eisenacher Strasse 2, 10777 Berlin, Germany}\vss}
       \par
@@ -277,12 +474,12 @@
 %%	  \ShortHeadings{short title}{short authors}
 
 %\def\firstpageno#1{\setcounter{page}{#1}}
-%\def\ShortHeadings#1#2{\def\ps@jpcps{\let\@mkboth\@gobbletwo%
+%\def\ShortHeadings#1#2{\def\ps@lmcsps{\let\@mkboth\@gobbletwo%
 %\def\@oddhead{\hfill {\small\sc #1} \hfill}%
 %\def\@oddfoot{\hfill \small\rm \thepage \hfill}%
 %\def\@evenhead{\hfill {\small\sc #2} \hfill}%
 %\def\@evenfoot{\hfill \small\rm \thepage \hfill}}%
-%\pagestyle{jpcps}}
+%\pagestyle{lmcsps}}
 
 %% MISCELLANY
 
@@ -295,6 +492,8 @@
      \addpenalty\@secpenalty\addvspace\@tempskipa\fi
  \@ifstar{\@dblarg{\@sect{#1}{\@m}{#3}{#4}{#5}{#6}}}%
          {\@dblarg{\@sect{#1}{#2}{#3}{#4}{#5}{#6}}}%
+%  \aftergroup\@afterindentfalse
+%  \aftergroup\@afterheading
 }
 
 \def\figurecaption#1#2{\noindent\hangindent 40pt
@@ -334,6 +533,7 @@
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{lem}[thm]{Lemma}
+\newtheorem{slem}[thm]{Sublemma}
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{asm}[thm]{Assumption}
 
@@ -362,6 +562,34 @@
 \newtheorem{com}[thm]{Comment}
 \newtheorem{coms}[thm]{Comments}
 
+%% goal is to omit parens from note, place cite as part of theorem number
+\newtheoremstyle{defC}%
+  {6pt}% (space above)
+  {6pt}% (space below)
+  {\normalfont}% (body font)
+  {}% (indent amount)
+  {\bfseries}% {theorem head font}
+  {{\bfseries .}}% {punctuation after theorem head}
+  {5pt plus 1pt minus 1pt}% {space after theorem head}
+  {\thmname{#1} \thmnumber{#2} \thmnote{\normalfont#3}}% {theorem head spec}
+\theoremstyle{defC}
+\newtheorem{defiC}[thm]{Definition}
+
+\newtheoremstyle{thmC}%
+  {6pt}% (space above)
+  {6pt}% (space below)
+  {\itshape}% (body font)
+  {}% (indent amount)
+  {\bfseries}% {theorem head font}
+  {{\bfseries .}}% {punctuation after theorem head}
+  {5pt plus 1pt minus 1pt}% {space after theorem head}
+  {\thmname{#1} \thmnumber{#2} \thmnote{\normalfont#3}}% {theorem head spec}
+
+\theoremstyle{thmC}
+\newtheorem{thmC}[thm]{Theorem}
+\newtheorem{propC}[thm]{Proposition}
+\newtheorem{lemC}[thm]{Lemma}
+
 \numberwithin{equation}{section}
 
 % end-of-proof sign, to appear at right margin
@@ -387,9 +615,14 @@
   %                   vertical
    \par}}                      % build paragraph
 
-\def\qEd{{\lower1 pt\hbox{\vbox{\hrule\hbox{\vrule\kern4 pt
-    \vbox{\kern4 pt\hbox{\hss}\kern4 pt}\kern4 pt\vrule}\hrule}}}}
+\newsavebox{\lmcsQEDSymbol}
+\savebox{\lmcsQEDSymbol}{\begin{tikzpicture}[baseline=\the\pgflinewidth]
+    \draw (-\the\pgflinewidth,-\the\pgflinewidth) rectangle (8pt,8pt);
+  \end{tikzpicture}}
+\def\qEd{\usebox{\lmcsQEDSymbol}}
 \def\qed{\pushright{\qEd}
+    \penalty-700 \par\addvspace{\medskipamount}}
+\def\Qed{\pushright{\qEd}
     \penalty-700 \par\addvspace{\medskipamount}}
 
 \newenvironment{Proof}[1][\proofname]{\par
@@ -397,7 +630,7 @@
   \normalfont \topsep6\p@\@plus6\p@\relax
   \trivlist
   \item[\hskip\labelsep
-        \itshape
+        \bf
     #1.]\ignorespaces
 }{%
   \popQED\endtrivlist\@endpefalse
@@ -407,128 +640,12 @@
 
 \bibliographystyle{alpha}
 
-\def\(#1{\relax\hbox to1.4 em{\rm(\hss#1\hss)}}
-
-%\ProvidesPackage{cclicenses}[2005/05/20 v0.4 CC licenses typesetting]
-\RequirePackage{rotating}
-\newdimen\cCHardim
-%\newdimen\cChDim
-%\newdimen\cChTmp
-%\newcount\cChPos
-%\newcount\cCvPos
-%\newcommand{\SA@aRRow}{
-%\cChDim\cCHardim
-%\ifdim\cChDim<1.5pt \cChDim=1.5pt\fi
-%\setlength\unitlength{1sp}
-%\begin{picture}(0,0)
-%  \cChPos=0
-%  \cCvPos\cChDim
-%  \loop
-%    \put(\cChPos,\cCvPos){
-%      \rule[0mm]{\cChDim}{1000sp}
-%    }
-%    \advance\cChTmp by 1000sp
-%    \cChPos\cChTmp
-%    \advance\cCvPos by -1000
-%    \advance\cChDim by -2000sp
-%  \ifnum\cCvPos > 0 \repeat
-%\end{picture}}
-\DeclareTextCommandDefault{\text@cC}{%
-  \let\origfontfamily\f@family
-  \let\origfontseries\f@series
-  \cCHardim\fontdimen6\font
-  \divide\cCHardim by 2
-  {
-    \fontfamily{phv}\fontseries{b}\selectfont%
-    \textcircled{%
-      \raisebox{.12ex}{\fontsize{\cCHardim}{\baselineskip}\selectfont{CC}}%
-    }
-  }
-  \fontfamily{\origfontfamily}\fontseries{\origfontseries}\selectfont
-}
-\DeclareTextCommandDefault{\text@cCnd}{%
-  \let\origfontfamily\f@family
-  \let\origfontseries\f@series
-  \cCHardim\fontdimen6\font
-  \divide\cCHardim by 2
-  {
-    \fontfamily{phv}\fontseries{b}\selectfont%
-    \textcircled{%
-      \raisebox{.20ex}{\fontsize{\cCHardim}{\baselineskip}\selectfont{=}}%
-    }
-  }
-  \fontfamily{\origfontfamily}\fontseries{\origfontseries}\selectfont
-}
-\DeclareTextCommandDefault{\text@cCby}{%
-  \let\origfontfamily\f@family
-  \let\origfontseries\f@series
-  \cCHardim\fontdimen6\font
-  \divide\cCHardim by 2
-  {
-    \fontfamily{phv}\fontseries{b}\selectfont%
-    \textcircled{%
-      \raisebox{.5pt}{\fontsize{\cCHardim}{\baselineskip}\selectfont%
-      {B\kern -.15em Y\kern -.15em:}}%
-    }
-  }
-  \fontfamily{\origfontfamily}\fontseries{\origfontseries}\selectfont
-}
-\DeclareTextCommandDefault{\text@cCnc}{%
-  \let\origfontfamily\f@family
-  \let\origfontseries\f@series
-  \cCHardim\fontdimen6\font
-  \divide\cCHardim by 2
-  {
-    \fontfamily{phv}\fontseries{b}\selectfont%
-    \textcircled{%
-      \raisebox{.15ex}{\fontsize{\cCHardim}{\baselineskip}\selectfont%
-      \makebox[0cm][c]{\$}}%
-      \setlength{\cCHardim}{1.98\cCHardim}%
-      \fontsize{\cCHardim}{\baselineskip}\selectfont%
-      \raisebox{-.20ex}{\begin{rotate}{45}\textbackslash\end{rotate}}%
-    }
-  }
-  \fontfamily{\origfontfamily}\fontseries{\origfontseries}\selectfont
-}
-\DeclareTextCommandDefault{\text@cCsa}{%
-  \let\origfontfamily\f@family
-  \let\origfontseries\f@series
-  \fontfamily{phv}\fontseries{b}\selectfont%
-  \textcircled{%
-    \makebox[1em][l]{
-      \raisebox{.95ex}{\hskip-.45ex
-        \begin{rotate}{180}\scshape{c}\end{rotate}}}%
-      \cCHardim\fontdimen6\font
-      \divide\cCHardim by 6
-      \raisebox{.3ex}{\hspace{-5ex}
-      \SA@aRRow}
-  }
-  \fontfamily{\origfontfamily}\fontseries{\origfontseries}\selectfont
-}
-\DeclareRobustCommand{\cC}{%
-  \ifmmode{\nfss@text{\text@cC}}\else\text@cC\fi}
-\DeclareRobustCommand{\cCnd}{%
-  \ifmmode{\nfss@text{\text@cCnd}}\else\text@cCnd\fi}
-\DeclareRobustCommand{\cCby}{%
-  \ifmmode{\nfss@text{\text@cCby}}\else\text@cCby\fi}
-\DeclareRobustCommand{\cCnc}{%
-  \ifmmode{\nfss@text{\text@cCnc}}\else\text@cCnc\fi}
-\DeclareRobustCommand{\cCsa}{%
-  \ifmmode{\nfss@text{\text@cCsa}}\else\text@cCsa\fi}
-\newcommand{\by}{\cCby}
-\newcommand{\bynd}{\cCby\cCnd}
-\newcommand{\byncnd}{\cCby\cCnc\cCnd}
-\newcommand{\bync}{\cCby\cCnc}
-\newcommand{\byncsa}{\cCby\cCnc\cCsa}
-\newcommand{\bysa}{\cCby\cCsa}
-\newcommand{\nd}{\cCnd}
-\newcommand{\ndnc}{\cCnd\cCnc}
-\newcommand{\nc}{\cCnc}
-\newcommand{\ncsa}{\cCnc\cCsa}
-\newcommand{\sa}{\cCsa}
 
 \def\eqalign#1{\null\,\vcenter{\openup\jot\mathsurround=0 pt
   \ialign{\strut\hfil$\displaystyle{##}$&$\displaystyle{{}##}$\hfil
       \crcr#1\crcr}}\,}
+
+\def\Rlap#1{\rlap{\mths$#1$}}
+\def\Llap#1{\llap{\mths$#1$}}
 
 \endinput
