@@ -403,18 +403,21 @@
     \hbox{\textsf{Journal of Privacy and Confidentiality}\hfil}
 %    \hbox{\textsf{Vol.~\doi, pp.\ 1--#2}}
     \hbox{\textsf{Vol.~#1 (#2) #3}}
-    \rlap{\vrule width\hsize depth .4 pt}}}\hfill
-\raise 4pt
+    \rlap{\vrule width\hsize depth .4 pt}
+  }}\hfill
+%\raise 4pt
 \hbox{\fontencoding{T1}%
   \vbox to 30 pt{\scriptsize\vfill
     \hbox{\textsf{#8}}
     \hbox{\textsf{\ }}}}\hfill
-\raise 4pt
+%\raise 4pt
 \hbox{\fontencoding{T1}%
   \vbox to 30 pt{\scriptsize\vfill
     \hbox to 94 pt{\textsf{Submitted\hfill #5}}
     \hbox to 94 pt{\textsf{Published\hfill #6}}
-    #7}}}
+    \hbox to 94 pt{\textsf{\hfill #7}}
+    }}
+}
 \def\@evenhead{}\def\@evenfoot{}}%
 \thispagestyle{firstpage}}
 
@@ -466,7 +469,7 @@
 \hfill
 \hbox{\fontencoding{T1}%
   \vbox{\fontsize{6}{8 pt}\baselineskip=6 pt\vss
-    \hbox{\textsf{\hspace{2 pt}\copyright\quad \shortauthors}\hfil}
+    \hbox{\textsf{\copyright\quad \shortauthors}\hfil}
     \hbox{\textsf{\ccsym\quad \href{\cclicenseurl}{\cclicense}}\hfil}}}
 \par\kern\z@}%
 }
