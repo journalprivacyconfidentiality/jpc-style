@@ -1,11 +1,17 @@
-\documentclass{csml} %%% last changed 2014-08-20
+\documentclass{jpc} %%% last changed 2014-08-20
+
+% JPC Layouting Macros
+%\newcommand{\doisuffix}{v0.i0.999}
+% \jpcheading{vol}{issue}{year}{notused}{subm}{publ}{rev}{spec_iss}{title}
+%\jpcheading{8}{1}{}{}{Mar.~20, 2017}{Jun.~22, 2018}{}{Special issue}
+%%% last changed 2014-08-20
 
 %% mandatory lists of keywords 
 \keywords{MANDATORY list of keywords}
 
 %% read in additional TeX-packages or personal macros here:
 %% e.g. \usepackage{tikz}
-\usepackage{hyperref}
+%\usepackage{hyperref}
 %%\input{myMacros.tex}
 %% define non-standard environments BEYOND the ones already supplied 
 %% here, for example
@@ -23,7 +29,7 @@
 
 \title[Instructions]{Instructions for Authors\\How to prepare papers
   for JPC using \MakeLowercase{\texttt{jpc.cls}}\rsuper*\\Version of 
-  2017-10-09}
+  2018-06-20}
 \titlecomment{{\lsuper*}OPTIONAL comment concerning the title, \eg, 
   if a variant or an extended abstract of the paper has appeared elsewhere.}
 
@@ -72,7 +78,7 @@
 %% start the paper here:
 \section*{Introduction}\label{S:one}
 
-  Logical Methods in Computer Science is a community effort. It is run
+  The Journal of Privacy and Confidentiality is a small journal, run
   by scientists like you who devote their time and effort to make this
   a hight-class open access journal that is free of cost for readers
   as well as authors.  To minimize the extra work for the layout
@@ -81,12 +87,16 @@
   for preparing their final version given in this document, which
   takes the form of a sample paper.
 
-  These revised instructions distill the experience of running the
-  Journal for several years.  They address the most time-consuming
-  aspects of getting articles into publishable shape.  While most
-  articles require only minimal intervention, as the Journal's volume
-  increased, so did the amount of time needed to reformat
-  non-compliant articles.
+  These instructions rely on the experience of multiple editors running this
+  Journal and others for several years, in particular the efforts of the editors of Logical Methods in Computer Science (LMCS, \url{https://lmcs.episciences.org/}), whose \LaTeX class we used as a basis for ours.  The instructions here address the most time-consuming
+  aspects of getting articles into publishable shape. 
+  
+\subsection*{A note about Word documents}
+For those authors who are unfamiliar with \LaTeX, we will provide some limited assistance. However, we strongly encourage you to try out modern \LaTeX tools, such as Overleaf (\url{https://www.overleaf.com}), which make this quite easy. 
+
+
+\subsection*{A note about Wordperfect documents}
+Really?
 
 \subsection*{\TeX-nical matters}
 
@@ -107,7 +117,7 @@
   instance, \href{http://www.fauskes.net/nb/latextips/#hyperref}{this
     explanation}).  
 
-  Authors must not (1) use unsupported fonts (like the
+  Authors \textbf{must not} (1) use unsupported fonts (like the
   \texttt{times}-package or the \texttt{txfonts}-package), (2) change
   the numbering style for theorems and definitions and the like, \eg,
   by redefining the already provided proclamation environments for

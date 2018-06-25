@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Modification log
 %%
-%% 2004/03/25 v0.1 based on amsart.cls, inspired by jair.sty 
+%% 2004/03/25 v0.1 based on amsart.cls, inspired by jair.sty
 %% 2004/09/01 v0.2 based on amsart.cls
 %% 2004/10/12 v0.3 based on amsart.cls
 %% 2004/12/16 v0.4 based on amsart.cls
@@ -14,9 +14,10 @@
 %% 2013/09/20 v0.9 based on amsart.cls
 %% 2015/03/27 v0.91 based on amsart.cls
 %% 2018/06/19 v0.91jpc based on lmcs.cls
-%%                
+%%
 %%                 Juergen Koslowski (Stefan Milius)
 %%
+%%         JPC mods: Lars Vilhuber
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
@@ -27,12 +28,15 @@
 
 \LoadClass[11pt,reqno]{amsart}
 \usepackage{helvet}
-
 \usepackage{enumitem}
 \setlist[enumerate]{font=\normalfont,labelindent=*,leftmargin=*}
 \setlist[itemize]{labelindent=*,leftmargin=*}
 \setlist[description]{labelindent=*,leftmargin=*,itemindent=-1 em}
 \usepackage{microtype}
+\usepackage{color}
+\definecolor{jpcred}{RGB}{99, 40, 39}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=jpcred,linkcolor=jpcred,citecolor=jpcred}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                   actual macros
@@ -213,15 +217,21 @@
 %% Pagestyle
 
 %% Defines the pagestyle for the title page.
-%% Usage: \jpcheading{vol}{issue}{year}{pages}{subm}{publ}{rev}{spec_iss}{title}
+%% Usage: \jpcheading{vol}{issue}{year}{notused}{subm}{publ}{rev}{spec_iss}{title}
+
+\def\jpcurl{www.journalprivacyconfidentiality.org}
+\def\doiprefix{10.29012/jpc}
+\def\doisuffix{v0.i0.000}
+\def\crossrefurl{https://doi.org/}
+\def\cclicenseurl{https://creativecommons.org/licenses/by/4.0/}
+\def\cclicense{Creative Commons (CC BY 4.0)}
 
 \def\jpcheading#1#2#3#4#5#6#7{\def\ps@firstpage{\let\@mkboth\@gobbletwo%
 \def\@oddhead{%
 \hbox{%
   \vbox to 30 pt{\scriptsize\vfill
     \hbox{\textsf{Journal of Privacy and Confidentiality}\hfil}
-    \hbox{\textsf{Vol.~? (?:?) 2???, ? pages}}
-    \hbox{\textsf{journalprivacyconfidentiality.pub}}
+    \hbox{\textsf{Vol.~? (?) 2???}}
     \rlap{\vrule width\hsize depth .4 pt}}}\hfill
 \raise 4pt
 \hbox{%
@@ -247,9 +257,12 @@
           \textsf{JOURNAL OF PRIVACY}\hfil}
     \hbox{\hbox to 20 pt{\phantom{x}}
           \textsf{AND CONFIDENTIALITY}}}}
-\hfill\textsf{DOI:10.29012/jpc.???}
-%\hfill\textsf{\copyright\shortauthors}
 \hfill
+\hbox{\fontencoding{T1}%
+  \vbox{\fontsize{6}{8 pt}\baselineskip=6 pt\vss
+    \hbox{\textsf{\href{https://\jpcurl}{\jpcurl}}\hfil}
+    \hbox{\textsf{DOI:\href{\crossrefurl\doiprefix .\doisuffix}{\doiprefix .\doisuffix}}\hfil}
+}}\hfill
 \hbox{%
   \vbox{\fontsize{6}{8 pt}\baselineskip=6 pt\vss
     \hbox{\textsf{\,\,\copyright\quad \shortauthors}\hfil}
@@ -308,7 +321,7 @@
 %  Allow ``hanging indents'' in long captions
 %
 \long\def\@makecaption#1#2{
-   \vskip 10pt 
+   \vskip 10pt
    \setbox\@tempboxa\hbox{#1: #2}
    \ifdim \wd\@tempboxa >\hsize               % IF longer than one line:
        \begin{list}{#1:}{
@@ -317,7 +330,7 @@
        \addtolength{\leftmargin}{\labelsep}
         }\item #2 \end{list}\par   % Output in quote mode
      \else                                    %   ELSE  center.
-       \hbox to\hsize{\hfil\box\@tempboxa\hfil}  
+       \hbox to\hsize{\hfil\box\@tempboxa\hfil}
    \fi}
 
 
