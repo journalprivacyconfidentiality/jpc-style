@@ -12,6 +12,7 @@
 %% read in additional TeX-packages or personal macros here:
 %% e.g. \usepackage{tikz}
 %\usepackage{hyperref}
+\usepackage{natbib} 
 %%\input{myMacros.tex}
 %% define non-standard environments BEYOND the ones already supplied 
 %% here, for example
@@ -27,8 +28,8 @@
 
 \begin{document}
 
-\title[Instructions]{Instructions for Authors\\How to prepare papers
-  for JPC using \MakeLowercase{\texttt{jpc.cls}}\rsuper*\\Version of 
+\title[Instructions]{Instructions for Authors:\\How to prepare papers
+  for JPC using \MakeLowercase{\texttt{jpc.cls}}\rsuper*\\ 
   2018-06-20}
 \titlecomment{{\lsuper*}OPTIONAL comment concerning the title, \eg, 
   if a variant or an extended abstract of the paper has appeared elsewhere.}
@@ -70,7 +71,7 @@
   turn it into html code.  If you cannot meet these criteria, it is
   your responsibility to provide us with an html-version of your
   abstract.  Please keep the abstract fairy short to prevent it from
-  spilling over to the second page!
+  spilling onto the second page!
 \end{abstract}
 
 \maketitle
@@ -88,7 +89,7 @@
   takes the form of a sample paper.
 
   These instructions rely on the experience of multiple editors running this
-  Journal and others for several years, in particular the efforts of the editors of Logical Methods in Computer Science (LMCS, \url{https://lmcs.episciences.org/}), whose \LaTeX\  class we used as a basis for ours.  The instructions here address the most time-consuming
+  Journal and others for several years, in particular the efforts of the editors of Logical Methods in Computer Science (LMCS, \url{https://lmcs.episciences.org/}), whose \LaTeX\  class (and this "instructions.tex") we used as a basis for ours.  The instructions here address the most time-consuming
   aspects of getting articles into publishable shape. 
   
 \subsection*{A note about Word documents}
@@ -154,21 +155,22 @@ Really?
 \subsection*{Matters of convenience}
 
   Please submit {\bf only one file} containing the
-  TeX-source of your paper!  It is a major inconvenience when certain
-  changes have to be applied in several files separately.  Of course,
+  TeX-source of your paper!   Of course,
   we understand that separating a TeX source into several files has
   advantages during the creation of a paper, but please combine all
-  parts into a single file for your submission. You personal macros
-  can of course be contained in a separate file, as can be external
-  graphics.  For the latter a dedicated subdirectory is required.
-
+  parts into a single file for your submission. 
+  
+  The following are exceptions to the above rule:
+  \begin{itemize}
+  	\item Your personal macros can  be contained in a separate file.
+  	\item You can use a single \texttt{.bib} file for bibliographic references. It should only include references actually used.
+  	\item External
+  graphics should of course be separately provided, with highest possible resolution. All graphics should be in a separate dedicated subdirectory (\eg ``graphics'' or ``figures'').
+\end{itemize}
 
 \subsection*{Matters of style}
 
-  Your article should start with an introduction.  This is the place
-  to employ mathematical notation and give references, as opposed to
-  the abstract.  It is up to the authors to decide, whether to assign
-  a section number to the introduction or not.
+  See the \href{https://journalprivacyconfidentiality.org/index.php/jpc/about/submissions}{website} for more extensive writing style suggestions.
 
 \section{Multiple authors}
 
@@ -203,7 +205,7 @@ Really?
 
   Please use the supplied proclamation environments (as well as
   LaTeX's cross-referencing facilities), or extend them in the spirit
-  of the given ones, if necessary (\cf~Satz \ref{T:big} below).
+  of the given ones, if necessary.
   Refrain from replacing the Journal's proclamation macros by your own
   constructs, especially do not change the numbering scheme: all
   proclamations are to be numbered consecutively!
@@ -213,82 +215,6 @@ Really?
   This is a test of subsectioning.  It works like numbering of
   paragraphs but is not linked with the numbering of theorems.
 
-\begin{satz}\label{T:big}
-  This is a sample for a proclamation environment that can be added
-  along with your personal macros, \emph{in case the supplied
-    environments do not suffice}.  Please refrain from substituting
-  other environments for the supplied ones.  We distinguish those 
-\begin{itemize}
-\item with italicised text:
-\begin{itemize}
-\item\emph{\texttt{\textbackslash
-    begin\{thm\}}\dots\texttt{\textbackslash end\{thm\}}} for a theorem;
-\item\emph{\texttt{\textbackslash
-    begin\{lem\}}\dots\texttt{\textbackslash end\{lem\}}} for a lemma;
-\item\emph{\texttt{\textbackslash
-    begin\{cor\}}\dots\texttt{\textbackslash end\{cor\}}} for a corollary;
-\item\emph{\texttt{\textbackslash
-    begin\{prop\}}\dots\texttt{\textbackslash end\{prop\}}} for a proposition;
-\item\emph{\texttt{\textbackslash
-    begin\{asm\}}\dots\texttt{\textbackslash end\{asm\}}} for an
-  assumption;
-\end{itemize}
-\item  and those with normal roman text:
-\begin{itemize}
-\item\emph{\texttt{\textbackslash
-    begin\{defi\}}\dots\texttt{\textbackslash end\{defi\}}} for a definition;
-\item\emph{\texttt{\textbackslash
-    begin\{conv\}}\dots\texttt{\textbackslash end\{conv\}}} for a convention;
-\item\emph{\texttt{\textbackslash
-    begin\{conj\}}\dots\texttt{\textbackslash end\{conj\}}} for a conjecture;
-\item\emph{\texttt{\textbackslash
-    begin\{fact\}}\dots\texttt{\textbackslash end\{fact\}}} for facts;
-\item\emph{\texttt{\textbackslash
-    begin\{algo\}}\dots\texttt{\textbackslash end\{algo\}}} for algorithms;
-\item\emph{\texttt{\textbackslash
-    begin\{pty\}}\dots\texttt{\textbackslash end\{pty\}}} for a property;
-\item\emph{\texttt{\textbackslash
-    begin\{clm\}}\dots\texttt{\textbackslash end\{clm\}}} for a claim;
-\item\emph{\texttt{\textbackslash
-    begin\{nota\}}\dots\texttt{\textbackslash end\{clm\}}} for a claim;
-\item\emph{\texttt{\textbackslash
-    begin\{exa\}}\dots\texttt{\textbackslash end\{nota\}}} for a notation;
-\item\emph{\texttt{\textbackslash
-    begin\{exa\}}\dots\texttt{\textbackslash end\{exa\}}} for a single example;
-\item\emph{\texttt{\textbackslash
-    begin\{exas\}}\dots\texttt{\textbackslash end\{exas\}}} for a list of examples;
-\item\emph{\texttt{\textbackslash
-    begin\{rem\}}\dots\texttt{\textbackslash end\{rem\}}} for single remarks;
-\item\emph{\texttt{\textbackslash
-    begin\{rems\}}\dots\texttt{\textbackslash end\{rems\}}} for a list of remarks;
-\item\emph{\texttt{\textbackslash
-    begin\{prob\}}\dots\texttt{\textbackslash end\{prob\}}} for a
-  single problem;
-\item\emph{\texttt{\textbackslash
-  begin\{probs\}}\dots\texttt{\textbackslash end\{probs\}}} for a list
-  of problems;
-\item\emph{\texttt{\textbackslash
-    begin\{oprob\}}\dots\texttt{\textbackslash end\{oprob\}}} for a single open problem;
-\item\emph{\texttt{\textbackslash
-    begin\{oprobs\}}\dots\texttt{\textbackslash end\{oprobs\}}} for a
-  list of open problems;
-\item\emph{\texttt{\textbackslash begin\{obs\}}\dots\texttt{\textbackslash
-  end\{obs\}}} for a single observation;
-\item\emph{\texttt{\textbackslash begin\{obss\}}\dots\texttt{\textbackslash
-  end\{obss\}}} for a list of observations;
-\item\emph{\texttt{\textbackslash
-    begin\{qu\}}\dots\texttt{\textbackslash end\{qu\}}} for a single question;
-\item\emph{\texttt{\textbackslash
-    begin\{qus\}}\dots\texttt{\textbackslash end\{qus\}}} for a list of questions.
-\end{itemize}
-\end{itemize}
-  The present new environment \emph{\texttt{\textbackslash
-    begin\{satz\}}\dots\texttt{\textbackslash end\{satz\}}} was defined
-  by
-\begin{center}
-  \emph{\texttt{\textbackslash theoremstyle\{plain\}\textbackslash newtheorem\{satz\}[thm]\{Satz\}}}
-\end{center}
-\end{satz}
 
 \begin{proof} You can use the familiar \texttt{\textbackslash
     begin\{proof\}}\dots\texttt{\textbackslash end\{proof\}}
@@ -357,8 +283,7 @@ Really?
   The same behavior occurs in proofs; to start the first item on a
   new line an explicit \texttt{\textbackslash hfill}-command is necessary.
 \item
-  The preferred bibliography style is \texttt{alpha}, as exemplified
-  by this citation \cite{Abowd:Nissim:Skinner:2009}.\qed
+  Citations can be formatted as you like, provided (i) the formatting is consistent and (ii) each citation begins with the last name of the first author, as in \cite{Abowd:Nissim:Skinner:2009}. Package \texttt{\textbackslash natbib} and a style such as \texttt{abbrvnat} work well. \qed
 \end{enumerate}
 
   \noindent We strongly recommend using this variant since it produces
@@ -401,20 +326,17 @@ Really?
   \hbox{\textbackslash noindent} command in such situations, just as
   after the proof of Theorem \ref{T:m} above.
 
+\section{Figures}
+Figures should be used to help with exposition. Where possible, one or more figures should provide illustrations of main results. These figures may be split into multiple parts. The legend on these figures should have enough detail that someone can get an impression of what is being displayed just by looking at the figure.
+
 \section*{Acknowledgment}
   \noindent The authors wish to acknowledge fruitful discussions with
   A and B.
 
 %% in general the use of bibtex is encouraged
 
-\begin{thebibliography}{Abo09}
-
-\bibitem[Abo09]{Abowd:Nissim:Skinner:2009}
-Abowd, J., Nissim, K., & Skinner, C. 
-\newblock First Issue Editorial. 
-\newblock Journal of Privacy and Confidentiality, 1(1). 2009 \url{https://doi.org/10.29012/jpc.v1i1.562}
-
-\end{thebibliography}
+\bibliography{sample}
+\bibliographystyle{abbrvnat}
 
 \appendix
 \section{}
