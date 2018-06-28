@@ -452,8 +452,8 @@
       \noindent
 \hbox{\fontencoding{T1}%
   \vbox{\fontsize{6}{8 pt}\baselineskip=6 pt\vss
-%    \hbox{\hbox to 20 pt{\includegraphics[height=20pt]{JPC_4-logo.png}}}
-    \hbox{\hbox to 20 pt{\includegraphics[height=20pt]{JPC_4.jpg}}}
+%    \hbox{\hbox to 20 pt{\includegraphics[height=20pt]{tmpl-images/JPC_4-logo.png}}}
+    \hbox{\hbox to 20 pt{\includegraphics[height=20pt]{tmpl-images/JPC_4.jpg}}}
   }}
 %\hbox{\fontencoding{T1}%
 %      \vbox{\fontsize{6}{8 pt}\baselineskip=6 pt\vss
