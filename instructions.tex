@@ -14,6 +14,7 @@
 %% e.g. \usepackage{tikz}
 %\usepackage{hyperref}
 \usepackage{natbib} 
+\usepackage[ruled]{algorithm2e}
 %%\input{myMacros.tex}
 %% define non-standard environments BEYOND the ones already supplied 
 %% here, for example
@@ -243,6 +244,27 @@ Really?
   proclamation (Theorem, Proposition, Lemma, Corollary).  Please do
   not redefine \emph{\texttt{\textbackslash qed}}!\qed
 \end{cor}
+
+\section{Algorithms}\label{S:algo}
+Algorithms and pseudo-code should be straightforward using the \texttt{algorithm2e} package:
+
+
+\begin{algorithm}[H]
+
+ \KwData{The original data set $X=(x_1,...,x_p)$}
+ \KwResult{A result data set $Z=(z_1,...,z_p)$}
+ \For{each $i \in 2,..,p$}{
+  1a. Model $x_i|x_1,...,x_{i-1}$ using some complex method\;
+  \For{each $j \in 1,...,n$}{
+   2a. Randomly select a quantile and choose the model corresponding to the quantile\;
+   2b. From this model, generate $z_{j,i}$ for each observation from $z_{j,1},...,z_{j,i-1}$ and return as result data value for $x_{j,i}$\;
+   } 
+ }
+ \caption{An iterative procedure to generate data}
+ \label{alg:data}
+\end{algorithm}
+
+\noindent For instance, Alg.~\ref{alg:data} describes an algorithm. We suggest using the \texttt{ruled} option. 
 
 \section{Itemization}\label{S:item}
   \texttt{JPC.cls} provides the familiar environments 
