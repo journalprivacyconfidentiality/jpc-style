@@ -394,7 +394,7 @@
 \def\cclicenseurl{https://creativecommons.org/licenses/by/4.0/}
 \def\cclicense{Creative Commons (CC BY 4.0)}
 %\def\ccsym{\crCby}
-\def\ccsym{\includegraphics[height=6pt]{ccby4compact.png}}
+\def\ccsym{\includegraphics[height=6pt]{tmpl-images/ccby4compact.png}}
 
 \def\jpcheading#1#2#3#4#5#6#7#8{\def\ps@firstpage{\let\@mkboth\@gobbletwo%
 \def\@oddhead{%
