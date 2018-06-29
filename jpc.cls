@@ -266,7 +266,7 @@
 \hbox{%
   \vbox{\fontsize{6}{8 pt}\baselineskip=6 pt\vss
     \hbox{\textsf{\,\,\copyright\quad \shortauthors}\hfil}
-    \hbox{\textsf{\,\,Creative Commons (CC BY 4.0)}\hfil}}}
+    \hbox{\textsf{\,\,Creative Commons (CC BY-NC-ND 4.0)}\hfil}}}
 \par\kern\z@}%
 }
 %\def\endfront@text{}
