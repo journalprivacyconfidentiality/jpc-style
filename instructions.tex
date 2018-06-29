@@ -64,16 +64,11 @@
 
 \begin{abstract}
   \noindent The abstract has to precede the maketitle command.  Be
-  sure not to issue the maketitle command twice!  In the abstract,
-  mathematical expressions must be kept to the absolute minimum.
-  Otherwise it should consist of plain ASCII text, without
-  \TeX-commands, including explicit references using the
-  \texttt{\textbackslash cite} command.  Presently we are not able to
-  automatically extract an abstract containing such data and reliably
-  turn it into html code.  If you cannot meet these criteria, it is
-  your responsibility to provide us with an html-version of your
-  abstract.  Please keep the abstract fairy short to prevent it from
-  spilling onto the second page!
+  sure not to issue the maketitle command twice!  Abstracts should include a brief summary of the main research findings. Avoid generic statements such as ``an example is presented''. Instead, minimal details about examples should be included, as in, ``we illustrate the benefit of our approach by analyzing data on employment from the UK Office of National Statistics''.  Avoid hyperlinks, explicit references using the
+  \texttt{\textbackslash cite} command, and if possible, \LaTeX code.
+  If you cannot meet these criteria, it is
+  your responsibility to provide us with an HTML-version of your
+  abstract.  Abstracts are limited to no more than 300 words.
 \end{abstract}
 
 \maketitle
@@ -91,7 +86,7 @@
   takes the form of a sample paper.
 
   These instructions rely on the experience of multiple editors running this
-  Journal and others for several years, in particular the efforts of the editors of Logical Methods in Computer Science (LMCS, \url{https://lmcs.episciences.org/}), whose \LaTeX\  class (and this "instructions.tex") we used as a basis for ours.  The instructions here address the most time-consuming
+  Journal and others for several years, in particular the efforts of the editors of Logical Methods in Computer Science (LMCS, \url{https://lmcs.episciences.org/}), whose \LaTeX\  class (and this   ``instructions.tex'') we used as a basis for ours.  The instructions here address the most time-consuming
   aspects of getting articles into publishable shape. 
   
 \subsection*{A note about Word documents}
@@ -369,16 +364,12 @@ Figures should be used to help with exposition. Where possible, one or more figu
 \item the text of your submission is contained in a single file,
   except for macros and graphics
 \item your graphics use only one format 
-\item you have employed the Journal's original proclamation environments,
-  or suitable extensions thereof 
 \item you have loaded the hyperref package
 \item you have \emph{not} loaded the times package
 \item you have not routinely adjusted vertical spacing manually by issuing
   \texttt{\textbackslash vspace} or \texttt{\textbackslash vskip} commands
 \item you have used the command \texttt{\textbackslash sloppy} only
   locally and in emergency cases
-\item your displayed equations use the
-  \texttt{\textbackslash[\dots\textbackslash]} construct
 \item your abstract only contains as few math-expressions as possible and no
   references 
 \end{itemize}
