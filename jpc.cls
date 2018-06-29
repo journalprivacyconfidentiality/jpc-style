@@ -223,8 +223,8 @@
 \def\doiprefix{10.29012/jpc}
 \def\doisuffix{v0.i0.000}
 \def\crossrefurl{https://doi.org/}
-\def\cclicenseurl{https://creativecommons.org/licenses/by/4.0/}
-\def\cclicense{Creative Commons (CC BY 4.0)}
+\def\cclicenseurl{https://creativecommons.org/licenses/by-nc-nd/4.0/}
+\def\cclicense{Creative Commons (CC BY-NC-ND 4.0)}
 
 \def\jpcheading#1#2#3#4#5#6#7{\def\ps@firstpage{\let\@mkboth\@gobbletwo%
 \def\@oddhead{%

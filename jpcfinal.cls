@@ -391,9 +391,10 @@
 \def\jpcurl{www.journalprivacyconfidentiality.org}
 \def\doiprefix{10.29012/jpc}
 \def\crossrefurl{https://doi.org/}
-\def\cclicenseurl{https://creativecommons.org/licenses/by/4.0/}
-\def\cclicense{Creative Commons (CC BY 4.0)}
+\def\cclicenseurl{https://creativecommons.org/licenses/by-nc-nd/4.0/}
+\def\cclicense{Creative Commons (CC BY-NC-ND 4.0)}
 %\def\ccsym{\crCby}
+% Icons by The Noun Project, licensed under a Creative Commons Attribution 4.0 International license. https://creativecommons.org/choose/
 \def\ccsym{\includegraphics[height=6pt]{tmpl-images/ccbyncnd4compact.png}}
 
 \def\jpcheading#1#2#3#4#5#6#7#8{\def\ps@firstpage{\let\@mkboth\@gobbletwo%
