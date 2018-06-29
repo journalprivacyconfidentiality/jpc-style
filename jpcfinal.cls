@@ -394,7 +394,7 @@
 \def\cclicenseurl{https://creativecommons.org/licenses/by/4.0/}
 \def\cclicense{Creative Commons (CC BY 4.0)}
 %\def\ccsym{\crCby}
-\def\ccsym{\includegraphics[height=6pt]{tmpl-images/ccby4compact.png}}
+\def\ccsym{\includegraphics[height=6pt]{tmpl-images/ccbyncnd4compact.png}}
 
 \def\jpcheading#1#2#3#4#5#6#7#8{\def\ps@firstpage{\let\@mkboth\@gobbletwo%
 \def\@oddhead{%
@@ -480,9 +480,8 @@
       \fontsize{6}{7\p@}\normalfont\upshape
       \everypar{}%
       \noindent\fontencoding{T1}%
-  \textsf{This work is licensed under the Creative Commons
-  Attribution License. To view a copy of this license, visit
-  \texttt{https://creativecommons.org/licenses/by/4.0/} or send a
+  \textsf{This work is licensed under the  Creative Commons License Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0). To view a copy of this license, visit
+  \texttt{https://creativecommons.org/licenses/by-nc-nd/4.0/} or send a
   letter to Creative Commons, 171 Second St, Suite 300, San Francisco,
     CA 94105, USA, or Eisenacher Strasse 2, 10777 Berlin, Germany}\vss}
       \par
