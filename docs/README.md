@@ -1,4 +1,3 @@
-# jpc-style
 
 This repository contains the latest article style to be used for submission to the [Journal of Privacy and Confidentiality](https://journalprivacyconfidentiality.org/). It is derived from LMCS style at https://lmcs.episciences.org/page/authors-latex-style .
 
