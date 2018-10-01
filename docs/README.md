@@ -3,7 +3,7 @@ This repository contains the latest article style to be used for submission to t
 
 ## Usage
 
-Download the [latest version](https://github.com/journalprivacyconfidentiality/jpc-style/releases/tag/latest), unzip, and write your article.
+Download the [latest version](https://github.com/journalprivacyconfidentiality/jpc-style/releases/latest), unzip, and write your article.
 
 ## Submission
 Verify that your submission meets all the requirements listed on the [Submissions](https://journalprivacyconfidentiality.org/index.php/jpc/about/submissions) page at the JPC, and submit.
