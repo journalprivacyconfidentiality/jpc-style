@@ -482,7 +482,7 @@
       \everypar{}%
       \noindent\fontencoding{T1}%
   \textsf{This work is licensed under the  Creative Commons License Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0). To view a copy of this license, visit
-  \texttt{https://creativecommons.org/licenses/by-nc-nd/4.0/} or send a
+  \url{https://creativecommons.org/licenses/by-nc-nd/4.0/} or send a
   letter to Creative Commons, 171 Second St, Suite 300, San Francisco,
     CA 94105, USA, or Eisenacher Strasse 2, 10777 Berlin, Germany}\vss}
       \par
