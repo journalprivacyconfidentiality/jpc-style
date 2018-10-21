@@ -23,6 +23,14 @@
 \ProvidesClass{jpcfinal}
               [2018/06/19 v0.91jpc LMCS Layout Editor Class]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{amsart}}
+% Allow for the draft option for watermark
+\newif\if@jpc@draft
+	\@jpc@drafttrue
+\DeclareOption{draft}{%
+	\@jpc@drafttrue}
+\DeclareOption{final}{%
+	\@jpc@draftfalse}
+
 \ProcessOptions\relax
 
 \LoadClass[11pt,reqno]{amsart}
@@ -37,6 +45,16 @@
 \definecolor{jpcred}{RGB}{99, 40, 39}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,urlcolor=jpcred,linkcolor=jpcred,citecolor=jpcred}
+
+\if@jpc@draft
+\usepackage{draftwatermark}
+\SetWatermarkText{DRAFT}
+\SetWatermarkScale{5}
+\SetWatermarkLightness{0.85}
+\else
+\usepackage[final]{draftwatermark}
+\fi
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   		Use of this class, cf. also lmcs-smp.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
