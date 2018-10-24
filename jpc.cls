@@ -528,17 +528,6 @@
   \ifmmode{\nfss@text{\text@cCnc}}\else\text@cCnc\fi}
 \DeclareRobustCommand{\cCsa}{%
   \ifmmode{\nfss@text{\text@cCsa}}\else\text@cCsa\fi}
-\newcommand{\by}{\cCby}
-\newcommand{\bynd}{\cCby\cCnd}
-\newcommand{\byncnd}{\cCby\cCnc\cCnd}
-\newcommand{\bync}{\cCby\cCnc}
-\newcommand{\byncsa}{\cCby\cCnc\cCsa}
-\newcommand{\bysa}{\cCby\cCsa}
-\newcommand{\nd}{\cCnd}
-\newcommand{\ndnc}{\cCnd\cCnc}
-\newcommand{\nc}{\cCnc}
-\newcommand{\ncsa}{\cCnc\cCsa}
-\newcommand{\sa}{\cCsa}
 
 \def\eqalign#1{\null\,\vcenter{\openup\jot\mathsurround=0 pt
   \ialign{\strut\hfil$\displaystyle{##}$&$\displaystyle{{}##}$\hfil
