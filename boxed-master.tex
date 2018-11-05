@@ -1,0 +1,58 @@
+\documentclass[final]{jpcfinal} %%% last changed 2014-08-20
+
+% JPC Layouting Macros
+% THESE ARE ADDED BY THE EDITORIAL TEAM - NO NEED TO SET HERE
+\newcommand{\doisuffix}{683.reminiscences}
+% \jpcheading{vol}{issue}{year}{notused}{subm}{publ}{rev}{spec_iss}{title}
+\jpcheading{8}{1}{2018}{}{Sept~3, 2018}{Nov, 2018}{}{Issue in honor of S. Fienberg}
+%%% last changed 2018-06-29 =====================================
+
+%% mandatory lists of keywords
+\keywords{reminiscences, Fienberg}
+
+%% read in additional TeX-packages or personal macros here:
+%% e.g. \usepackage{tikz}
+%\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage[ruled]{algorithm2e}
+\usepackage{pdfpages}
+\input{jpcboxed.tex}
+
+
+\begin{document}
+
+\title[Reminiscences]{Reminiscences of Steve Fienberg}
+
+\author{Jerome P. Reiter}	%optional
+\address{Department of Statistical Science, Duke University}	%optional
+\email{jreiter@duke.edu}  %optional
+%\thanks{This research was supported by the National Science Foundation grants SES-1131897 and ACI-1443014.}	%optional
+
+\maketitle
+%
+% Insert memories here
+%
+%\begin{wrapfigure}{r}[10pt]{3in}
+\begin{figure}[H]
+	\begin{cornerbox}[width=\linewidth]\small\fontfamily{qag}\selectfont
+		
+		\input{Fienberg.tex}
+		
+		\hfill \it Jerry Reiter
+	\end{cornerbox}
+\end{figure}
+%\end{wrapfigure}
+
+%% etc.
+
+%% required for running head on odd and even pages, use suitable
+%% abbreviations in case of long titles and many authors:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% the abstract has to PRECEDE the command \maketitle:
+%% be sure not to issue the \maketitle command twice!
+
+%\includepdf[pages=2,offset=0 0.7in,pagecommand={}]{683-manuscript-test.pdf}
+
+\end{document}
