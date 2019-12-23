@@ -36,7 +36,7 @@
 \LoadClass[11pt,reqno]{amsart}
 \usepackage{helvet,cclicenses}
 \usepackage{enumitem}
-\setlist[enumerate]{font=\normalfont,labelindent=*,leftmargin=*,start=1}
+\setlist[enumerate]{font=\normalfont,labelindent=*,leftmargin=*}
 \setlist[itemize]{labelindent=*,leftmargin=*}
 \setlist[description]{labelindent=*,leftmargin=*,itemindent=-1 em}
 \usepackage{microtype}
@@ -225,12 +225,9 @@
 %%%                   actual macros
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% FIXME: does this cause problems?
 \count255=\the\catcode`\@ \catcode`\@=11 \edef\catc@de{\the\count255}
 
-\newenvironment{iteMize}[1]{\begin{enumerate}[#1]}{\end{enumerate}}
-\newenvironment{desCription}{\begin{enumerate}[\hbox to8 pt{\hfill}]}{\end{enumerate}}
-\newenvironment{desCriPtion}{\begin{enumerate}[\hbox to14 pt{\hfill}]}{\end{enumerate}}\newif\ifsuPer \suPertrue
+\newif\ifsuPer \suPertrue
 \def\rsuper#1{\ifsuPer${\,}^{\MakeLowercase #1}$\fi}%
 \def\lsuper#1{\ \hskip-2 pt\ifsuPer\hbox to0 pt{\hss${}^{\MakeLowercase #1}\ $\fi}}%
 
@@ -395,7 +392,6 @@
 \setlength{\textheight}{8.5 true in}  % Height of text (including footnotes & figures)
 \setlength{\textwidth}{6.0 true in}   % Width of text line.
 \setlength{\parindent}{20 pt}   % Width of text line.
-% FIXME: do these cause problems?
 \widowpenalty=10000
 \clubpenalty=10000
 \@twosidetrue \@mparswitchtrue \def\ds@draft{\overfullrule 5pt}
@@ -424,17 +420,16 @@
     \hbox{\textsf{Vol.~#1 (#2) #3}}
     \rlap{\vrule width\hsize depth .4 pt}
   }}\hfill
-%\raise 4pt
+\raise 4pt
 \hbox{\fontencoding{T1}%
   \vbox to 30 pt{\scriptsize\vfill
     \hbox{\textsf{#8}}
     \hbox{\textsf{\ }}}}\hfill
-%\raise 4pt
+\raise 4pt
 \hbox{\fontencoding{T1}%
   \vbox to 30 pt{\scriptsize\vfill
     \hbox to 94 pt{\textsf{Submitted\hfill #5}}
     \hbox to 94 pt{\textsf{Published\hfill #6}}
-    \hbox to 94 pt{\textsf{\hfill #7}}
     }}
 }
 \def\@evenhead{}\def\@evenfoot{}}%
@@ -530,8 +525,6 @@
      \addpenalty\@secpenalty\addvspace\@tempskipa\fi
  \@ifstar{\@dblarg{\@sect{#1}{\@m}{#3}{#4}{#5}{#6}}}%
          {\@dblarg{\@sect{#1}{#2}{#3}{#4}{#5}{#6}}}%
-%  \aftergroup\@afterindentfalse
-%  \aftergroup\@afterheading
 }
 
 \def\figurecaption#1#2{\noindent\hangindent 40pt
@@ -571,7 +564,6 @@
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{lem}[thm]{Lemma}
-\newtheorem{slem}[thm]{Sublemma}
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{asm}[thm]{Assumption}
 
@@ -599,34 +591,6 @@
 \newtheorem{nota}[thm]{Notation}
 \newtheorem{com}[thm]{Comment}
 \newtheorem{coms}[thm]{Comments}
-
-%% goal is to omit parens from note, place cite as part of theorem number
-\newtheoremstyle{defC}%
-  {6pt}% (space above)
-  {6pt}% (space below)
-  {\normalfont}% (body font)
-  {}% (indent amount)
-  {\bfseries}% {theorem head font}
-  {{\bfseries .}}% {punctuation after theorem head}
-  {5pt plus 1pt minus 1pt}% {space after theorem head}
-  {\thmname{#1} \thmnumber{#2} \thmnote{\normalfont#3}}% {theorem head spec}
-\theoremstyle{defC}
-\newtheorem{defiC}[thm]{Definition}
-
-\newtheoremstyle{thmC}%
-  {6pt}% (space above)
-  {6pt}% (space below)
-  {\itshape}% (body font)
-  {}% (indent amount)
-  {\bfseries}% {theorem head font}
-  {{\bfseries .}}% {punctuation after theorem head}
-  {5pt plus 1pt minus 1pt}% {space after theorem head}
-  {\thmname{#1} \thmnumber{#2} \thmnote{\normalfont#3}}% {theorem head spec}
-
-\theoremstyle{thmC}
-\newtheorem{thmC}[thm]{Theorem}
-\newtheorem{propC}[thm]{Proposition}
-\newtheorem{lemC}[thm]{Lemma}
 
 \numberwithin{equation}{section}
 
@@ -660,15 +624,15 @@
 \def\qEd{\usebox{\lmcsQEDSymbol}}
 \def\qed{\pushright{\qEd}
     \penalty-700 \par\addvspace{\medskipamount}}
-\def\Qed{\pushright{\qEd}
-    \penalty-700 \par\addvspace{\medskipamount}}
+%\def\Qed{\pushright{\qEd}
+%    \penalty-700 \par\addvspace{\medskipamount}}
 
 \newenvironment{Proof}[1][\proofname]{\par
   \pushQED{\qed}%
   \normalfont \topsep6\p@\@plus6\p@\relax
   \trivlist
   \item[\hskip\labelsep
-        \bf
+        \itshape
     #1.]\ignorespaces
 }{%
   \popQED\endtrivlist\@endpefalse
