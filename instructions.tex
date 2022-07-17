@@ -7,16 +7,16 @@
 %\jpcheading{0}{0}{2000}{}{Mar.~20, 2017}{Jun.~22, 2018}{}{Special issue}
 %%% last changed 2014-08-20
 
-%% mandatory lists of keywords 
+%% mandatory lists of keywords
 \keywords{MANDATORY list of keywords}
 
 %% read in additional TeX-packages or personal macros here:
 %% e.g. \usepackage{tikz}
 %\usepackage{hyperref}
-\usepackage{natbib} 
+\usepackage{natbib}
 \usepackage[ruled]{algorithm2e}
 %%\input{myMacros.tex}
-%% define non-standard environments BEYOND the ones already supplied 
+%% define non-standard environments BEYOND the ones already supplied
 %% here, for example
 \theoremstyle{plain}\newtheorem{satz}[thm]{Satz} %\crefname{satz}{Satz}{S\"atze}
 %% Do NOT replace the proclamation environments lready provided by
@@ -31,9 +31,9 @@
 \begin{document}
 
 \title[Instructions]{Instructions for Authors:\\How to prepare papers
-  for JPC using \MakeLowercase{\texttt{jpc.cls}}\rsuper*\\ 
+  for JPC using \MakeLowercase{\texttt{jpc.cls}}\rsuper*\\
   2018-06-20}
-\titlecomment{{\lsuper*}OPTIONAL comment concerning the title, \eg, 
+\titlecomment{{\lsuper*}OPTIONAL comment concerning the title, \eg,
   if a variant or an extended abstract of the paper has appeared elsewhere.}
 
 \author[A.~Name1]{Alice Name1}	%required
@@ -87,10 +87,10 @@
 
   These instructions rely on the experience of multiple editors running this
   Journal and others for several years, in particular the efforts of the editors of Logical Methods in Computer Science (LMCS, \url{https://lmcs.episciences.org/}), whose \LaTeX\  class (and this   ``instructions.tex'') we used as a basis for ours.  The instructions here address the most time-consuming
-  aspects of getting articles into publishable shape. 
-  
+  aspects of getting articles into publishable shape.
+
 \subsection*{A note about Word documents}
-For those authors who are unfamiliar with \LaTeX, we will provide some limited assistance. However, we strongly encourage you to try out modern \LaTeX\  tools, such as Overleaf (\url{https://www.overleaf.com}), which make this quite easy. 
+For those authors who are unfamiliar with \LaTeX, we will provide some limited assistance. However, we strongly encourage you to try out modern \LaTeX\  tools, such as Overleaf (\url{https://www.overleaf.com}), which make this quite easy.
 
 
 \subsection*{A note about Wordperfect documents}
@@ -98,7 +98,7 @@ Really?
 
 \subsection*{\TeX-nical matters}
 
-  Please be aware that the class-file {\bf jpc.cls} supplied to 
+  Please be aware that the class-file {\bf jpc.cls} supplied to
   authors will be replaced by the Journal's master class-file before
   publication of your article.  Hence it is not necessary, and is in
   fact counterproductive, to emulate the appearance of published
@@ -113,7 +113,7 @@ Really?
   taken to use the \texttt{\textbackslash texorpdfstring} macro for
   mathematical expressions in section or subsection headings (see, for
   instance, \href{http://www.fauskes.net/nb/latextips/#hyperref}{this
-    explanation}).  
+    explanation}).
 
   Authors \textbf{must not} (1) use unsupported fonts (like the
   \texttt{times}-package or the \texttt{txfonts}-package), (2) change
@@ -148,15 +148,15 @@ Really?
   necessary by the authors, they can be implemented on the basis of
   the proofs, in collaboration with the layout editor, as a last step
   before final publication.
- 
+
 \subsection*{Matters of convenience}
 
   Please submit {\bf only one file} containing the
   TeX-source of your paper!   Of course,
   we understand that separating a TeX source into several files has
   advantages during the creation of a paper, but please combine all
-  parts into a single file for your submission. 
-  
+  parts into a single file for your submission.
+
   The following are exceptions to the above rule:
   \begin{itemize}
   	\item Your personal macros can  be contained in a separate file.
@@ -217,7 +217,8 @@ Really?
     begin\{proof\}}\dots\texttt{\textbackslash end\{proof\}}
   construction.  Please do not insert a blank line before
   \texttt{\textbackslash end\{proof\}}, as this moves the box to a new
-  line.  
+  line.
+\end{proof}
 
   In case a proof ends with an itemization,
   please issue the command \texttt{\textbackslash qedhere} at the end
@@ -225,13 +226,23 @@ Really?
     end\{enumerate\}} (or similar) and \texttt{\textbackslash end\{proof\}}.
   Otherwise the end-of-proof box is put on a separate line
   following the last item, which looks awkward, unless the last line
-  is too full to accommodate the box.
+  is too full to accommodate the box. Compare:
+\begin{proof}
+  \begin{enumerate}
+  	\item This omits the \texttt{\textbackslash qedhere} command.
+  \end{enumerate}
+\end{proof}
+vs.:
+\begin{proof}
+	\begin{enumerate}
+		\item This includes the \texttt{\textbackslash qedhere} command. \qedhere
+	\end{enumerate}
+\end{proof}
 
   For options how to handle proofs ending in a displayed multi-line
   equation or formula, see
   \href{http://tex.stackexchange.com/questions/101929/qed-or-qedhere-at-the-end-of-split-environment}{this
-    discussion}.
-\end{proof}
+    discussion}. \textbf{Note that  \texttt{\textbackslash qedhere} with \texttt{jpc.cls} does not work in math environments (\texttt{align*, equation, etc.}). }
 
 \begin{cor}\label{C:big}
   If no proof is given, \texttt{jpc.cls} provides Paul Taylor's
@@ -253,19 +264,19 @@ Algorithms and pseudo-code should be straightforward using the \texttt{algorithm
   \For{each $j \in 1,...,n$}{
    2a. Randomly select a quantile and choose the model corresponding to the quantile\;
    2b. From this model, generate $z_{j,i}$ for each observation from $z_{j,1},...,z_{j,i-1}$ and return as result data value for $x_{j,i}$\;
-   } 
+   }
  }
  \caption{An iterative procedure to generate data}
  \label{alg:data}
 \end{algorithm}
 
-\noindent For instance, Alg.~\ref{alg:data} describes an algorithm. We suggest using the \texttt{ruled} option. 
+\noindent For instance, Alg.~\ref{alg:data} describes an algorithm. We suggest using the \texttt{ruled} option.
 
 \section{Itemization}\label{S:item}
-  \texttt{JPC.cls} provides the familiar environments 
+  \texttt{JPC.cls} provides the familiar environments
 \begin{enumerate}
 \item\texttt{\textbackslash
-  begin\{itemize\}}\dots\texttt{\textbackslash end\{itemize\}} 
+  begin\{itemize\}}\dots\texttt{\textbackslash end\{itemize\}}
 \item\texttt{\textbackslash
   begin\{enumerate\}}\dots\texttt{\textbackslash end\{enumerate\}}
   (see this listing)
@@ -300,7 +311,7 @@ Algorithms and pseudo-code should be straightforward using the \texttt{algorithm
   The same behavior occurs in proofs; to start the first item on a
   new line an explicit \texttt{\textbackslash hfill}-command is necessary.
 \item
-  Citations can be formatted as you like, provided (i) the formatting is consistent and (ii) each citation begins with the last name of the first author, as in \cite{Abowd:Nissim:Skinner:2009}. Package \texttt{\textbackslash natbib} and a style such as \texttt{abbrvnat} work well. \qed
+	Citations can be formatted as you like, provided (i) the formatting is consistent and (ii) each citation begins with the last name of the first author, as in \cite{Abowd:Nissim:Skinner:2009}, and (iii) each entry in the references has the DOI (preferred) or URL of the online version. Package \texttt{\textbackslash natbib} and a style such as \texttt{abbrvnat} work well. \qed
 \end{enumerate}
 
   \noindent We strongly recommend using this variant since it produces
@@ -312,12 +323,12 @@ Algorithms and pseudo-code should be straightforward using the \texttt{algorithm
   without inserting a blank line, or by explicit use of the
   noindent-command at the beginning of the paragraph.  The effect
   indentation may have after a list environment is demonstrated after
-  the proof of Theorem \ref{T:en}. 
- 
+  the proof of Theorem \ref{T:en}.
+
 \begin{thm}\label{T:en} %% without \hfill the first item is indented
 
 \begin{enumerate}%[\em(1)]
-\item  
+\item
   Without the \emph{\texttt{\textbackslash hfill}}-command the first item
   starts in the same line as the title for the proclamation.
 \item
@@ -361,9 +372,8 @@ Figures should be used to help with exposition. Where possible, one or more figu
   JPC:
 \begin{itemize}[label=$\triangleright$]
 \item your submission uses the latest version of jpc.cls
-\item the text of your submission is contained in a single file,
-  except for macros and graphics
-\item your graphics use only one format 
+%\item the text of your submission is contained in a single file, except for macros and graphics
+\item your graphics use only one format
 \item you have loaded the hyperref package
 \item you have \emph{not} loaded the times package
 \item you have not routinely adjusted vertical spacing manually by issuing
@@ -371,7 +381,7 @@ Figures should be used to help with exposition. Where possible, one or more figu
 \item you have used the command \texttt{\textbackslash sloppy} only
   locally and in emergency cases
 \item your abstract only contains as few math-expressions as possible and no
-  references 
+  references
 \end{itemize}
 
   This listing also shows how to override the default bullet $\bullet$
