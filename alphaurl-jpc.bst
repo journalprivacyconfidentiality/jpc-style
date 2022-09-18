@@ -82,7 +82,7 @@ FUNCTION {init.urlbst.variables}
   "http://arxiv.org/abs/" 'eprinturl := % prefix to make URL from eprint ref
   "arXiv:" 'eprintprefix := % text prefix printed before eprint ref; typically "arXiv:"
   "https://doi.org/" 'doiurl := % prefix to make URL from DOI
-  "doi:" 'doiprefix :=      % text prefix printed before DOI ref; typically "doi:"
+  "https://doi.org/" 'doiprefix :=      % text prefix printed before DOI ref; typically "doi:"
   "http://www.ncbi.nlm.nih.gov/pubmed/" 'pubmedurl := % prefix to make URL from PUBMED
   "PMID:" 'pubmedprefix :=      % text prefix printed before PUBMED ref; typically "PMID:"
 
@@ -981,6 +981,9 @@ FUNCTION {inbook}
       new.sentence
       publisher "publisher" output.check
       address output
+      new.sentence
+      possibly.setup.inlinelink format.vol.num.pages output% 
+
     }
     { format.chapter.pages "chapter and pages" output.check
       new.block
@@ -1046,6 +1049,7 @@ FUNCTION {inproceedings}
           publisher output
         }
       if$
+      possibly.setup.inlinelink format.vol.num.pages output% 
     }
     { format.incoll.inproc.crossref output.nonnull
       format.pages output
