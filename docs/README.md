@@ -5,5 +5,9 @@ This repository contains the latest article style to be used for submission to t
 
 Download the [latest version](https://github.com/journalprivacyconfidentiality/jpc-style/releases/latest), unzip, and write your article.
 
+## Overleaf
+
+You can also use the [Overleaf version](https://www.overleaf.com/read/rrwjphfxpcsp) at [https://www.overleaf.com/read/rrwjphfxpcsp](https://www.overleaf.com/read/rrwjphfxpcsp).
+
 ## Submission
 Verify that your submission meets all the requirements listed on the [Submissions](https://journalprivacyconfidentiality.org/index.php/jpc/about/submissions) page at the JPC, and submit.
