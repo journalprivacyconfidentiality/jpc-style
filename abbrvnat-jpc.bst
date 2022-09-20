@@ -994,6 +994,7 @@ FUNCTION {techreport}
   institution "institution" output.check
   address output
   format.date "year" output.check
+  format.doi output
   format.url output
   new.block
   note output
