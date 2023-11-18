@@ -23,3 +23,7 @@ Add the following lines after the `\documentclass` lines:
 \jpcheading{0}{0}{2000}{}{Mar.~20, 2017}{Jun.~22, 2018}{}{Special issue}
 ```
 
+## Tools
+
+- [Convert Word or Excel tables into LaTeX](https://tableconvert.com/)
+- [Converting Word bibliographies](https://update.lib.berkeley.edu/2018/02/07/extracting-references-from-an-already-created-bibliography/)
